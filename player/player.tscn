@@ -256,4 +256,8 @@ scale_amount_max = 0.7
 color = Color(1, 1, 1, 0.5)
 
 [node name="Camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 1360
 position_smoothing_enabled = true

@@ -11,6 +11,7 @@ const MAX_FALL_SPEED: float = 420.0
 @onready var invuln_timer: Timer = $InvulnTimer
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
 @onready var dust: CPUParticles2D = $Dust
+@onready var hurt_sound: AudioStreamPlayer = $HurtSound
 
 
 func _ready() -> void:
@@ -45,6 +46,7 @@ func _on_hurt_box_body_entered(_body: Node2D) -> void:
 	if not invuln_timer.is_stopped():
 		return
 	invuln_timer.start()
+	hurt_sound.play()
 	GameState.take_damage(1)
 	velocity.y = -150.0
 

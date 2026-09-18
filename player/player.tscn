@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3]
+[gd_scene load_steps=37 format=3]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_pf6di"]
 [ext_resource type="Texture2D" path="res://assets/player/Fall (32x32).png" id="2_x6akt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/player/Run (32x32).png" id="5_pflb8"]
 [ext_resource type="AudioStream" path="res://assets/sfx/sfx_jump.ogg" id="6_fjhw7"]
 [ext_resource type="Texture2D" path="res://assets/fx/Dust Particle.png" id="7_ecxc4"]
+[ext_resource type="AudioStream" path="res://assets/sfx/sfx_hurt.ogg" id="8_hurt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wnlg"]
 atlas = ExtResource("2_x6akt")
@@ -254,6 +255,10 @@ initial_velocity_max = 55.0
 scale_amount_min = 0.3
 scale_amount_max = 0.7
 color = Color(1, 1, 1, 0.5)
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hurt")
+volume_db = -4.0
 
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0

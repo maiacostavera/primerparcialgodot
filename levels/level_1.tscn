@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4]
+[gd_scene load_steps=6 format=4]
 
 [ext_resource type="Texture2D" path="res://assets/background/Brown.png" id="1_qberl"]
 [ext_resource type="TileSet" path="res://levels/tileset.tres" id="2_bjoo1"]
 [ext_resource type="PackedScene" path="res://player/player.tscn" id="3_dgqab"]
+[ext_resource type="PackedScene" path="res://pickups/coin.tscn" id="4_coin"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="5_hud"]
 
 [node name="Level1" type="Node2D"]
 
@@ -20,5 +22,22 @@ tile_set = ExtResource("2_bjoo1")
 
 [node name="Entities" type="Node2D" parent="."]
 
+[node name="Coin1" parent="Entities" instance=ExtResource("4_coin")]
+position = Vector2(248, 150)
+
+[node name="Coin2" parent="Entities" instance=ExtResource("4_coin")]
+position = Vector2(296, 342)
+
+[node name="Coin3" parent="Entities" instance=ExtResource("4_coin")]
+position = Vector2(360, 534)
+
+[node name="Coin4" parent="Entities" instance=ExtResource("4_coin")]
+position = Vector2(136, 822)
+
+[node name="Coin5" parent="Entities" instance=ExtResource("4_coin")]
+position = Vector2(296, 1110)
+
 [node name="Player" parent="." instance=ExtResource("3_dgqab")]
 position = Vector2(72, 48)
+
+[node name="HUD" parent="." instance=ExtResource("5_hud")]

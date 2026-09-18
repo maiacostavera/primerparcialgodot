@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4]
+[gd_scene load_steps=11 format=4]
 
 [ext_resource type="Texture2D" path="res://assets/background/Brown.png" id="1_qberl"]
 [ext_resource type="TileSet" path="res://levels/tileset.tres" id="2_bjoo1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://enemies/slime.tscn" id="7_slime"]
 [ext_resource type="PackedScene" path="res://world/door.tscn" id="8_door"]
 [ext_resource type="PackedScene" path="res://enemies/fly.tscn" id="9_fly"]
+[ext_resource type="AudioStream" path="res://assets/music/music_level.ogg" id="10_music"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("6_level")
@@ -70,3 +71,8 @@ position = Vector2(72, 48)
 
 [node name="Door" parent="." instance=ExtResource("8_door")]
 position = Vector2(248, 1328)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_music")
+volume_db = -8.0
+autoplay = true

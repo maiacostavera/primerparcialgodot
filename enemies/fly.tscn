@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://enemies/fly.gd" id="1_kvpuk"]
+[ext_resource type="Texture2D" path="res://assets/enemies/fly_a.png" id="2_geyyd"]
+[ext_resource type="Texture2D" path="res://assets/enemies/fly_b.png" id="3_gswa5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkf62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_geyyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gswa5")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7qx7"]
+radius = 8.0
+
+[node name="Fly" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_kvpuk")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nkf62")
+animation = &"fly"
+autoplay = "fly"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f7qx7")

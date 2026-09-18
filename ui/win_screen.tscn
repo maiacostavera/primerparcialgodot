@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ui/win_screen.gd" id="1_e6rn0"]
+[ext_resource type="Texture2D" path="res://assets/fx/Dust Particle.png" id="2_yteec"]
+
+[sub_resource type="Gradient" id="Gradient_ctgor"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(1, 0.35, 0.35, 1, 1, 0.85, 0.3, 1, 0.45, 0.9, 0.45, 1, 0.4, 0.7, 1, 1, 1, 0.5, 0.9, 1)
+
+[node name="WinScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_e6rn0")
+
+[node name="Fondo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "¡GANASTE!"
+horizontal_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "FRUTAS: 0 de 5"
+horizontal_alignment = 1
+
+[node name="HintLabel" type="Label" parent="Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Apretá R para jugar de nuevo"
+horizontal_alignment = 1
+
+[node name="Confetti" type="CPUParticles2D" parent="."]
+position = Vector2(240, -10)
+amount = 50
+lifetime = 3.0
+preprocess = 1.5
+texture = ExtResource("2_yteec")
+emission_shape = 3
+emission_rect_extents = Vector2(240, 4)
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+color_initial_ramp = SubResource("Gradient_ctgor")

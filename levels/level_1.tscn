@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4]
+[gd_scene load_steps=9 format=4]
 
 [ext_resource type="Texture2D" path="res://assets/background/Brown.png" id="1_qberl"]
 [ext_resource type="TileSet" path="res://levels/tileset.tres" id="2_bjoo1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://ui/hud.tscn" id="5_hud"]
 [ext_resource type="Script" path="res://world/level.gd" id="6_level"]
 [ext_resource type="PackedScene" path="res://enemies/slime.tscn" id="7_slime"]
+[ext_resource type="PackedScene" path="res://world/door.tscn" id="8_door"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("6_level")
@@ -56,3 +57,6 @@ position = Vector2(200, 1321)
 position = Vector2(72, 48)
 
 [node name="HUD" parent="." instance=ExtResource("5_hud")]
+
+[node name="Door" parent="." instance=ExtResource("8_door")]
+position = Vector2(248, 1328)

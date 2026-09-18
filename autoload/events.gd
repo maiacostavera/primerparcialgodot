@@ -4,3 +4,4 @@ extends Node
 signal coins_changed(total: int)
 signal health_changed(current: int, maximum: int)
 signal player_died
+signal level_won
